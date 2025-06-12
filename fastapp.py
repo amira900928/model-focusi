@@ -11,10 +11,7 @@ import gdown
 # ضيف المسار لو مجلد network مش في نفس المسار
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
-from network.gazenet import GazeNet  # موديلك
-
-drive_url = 'https://drive.google.com/file/d/1YeJzqwdi62JREHNxMXun_GG0cD22TlhJ/view?usp=drive_link'  # replace with your file id
-drive_url = 'https://drive.google.com/file/d/1YeJzqwdi62JREHNxMXun_GG0cD22TlhJ/view?usp=drive_link'
+from network.gazenet import GazeNet  # موديلك  
 
 resnet_path = "resnet.pth"  # 🛠️ عرفنا المتغير هنا
 
@@ -28,8 +25,8 @@ app = FastAPI()
 
 # ✅ تحميل الموديل
 model = GazeNet(backbone='ResNet-34', view='single', pretrained=False)
+gdrive_url = 'https://drive.google.com/file/d/1_6M-7SfWamkk3v_wC-rDR6My198H46pE'  # Replace YOUR_FILE_ID with your file's ID
 model_path = 'model_best.pth.tar'
-gdrive_url = 'https://drive.google.com/file/d/1_6M-7SfWamkk3v_wC-rDR6My198H46pE/view?usp=drive_link'  # Replace YOUR_FILE_ID with your file's ID
 def download_model():
     if not os.path.exists(model_path):
         print("Downloading model file...")
