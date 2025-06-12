@@ -14,12 +14,16 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 from network.gazenet import GazeNet  # موديلك
 
 drive_url = 'https://drive.google.com/file/d/1YeJzqwdi62JREHNxMXun_GG0cD22TlhJ/view?usp=drive_link'  # replace with your file id
+drive_url = 'https://drive.google.com/file/d/1YeJzqwdi62JREHNxMXun_GG0cD22TlhJ/view?usp=drive_link'
+
+resnet_path = "resnet.pth"  # 🛠️ عرفنا المتغير هنا
 
 if not os.path.exists(resnet_path):
     print("Downloading renet file...")
     gdown.download(drive_url, resnet_path, quiet=False)
 else:
     print("resnet already downloaded.")
+
 app = FastAPI()
 
 # ✅ تحميل الموديل
