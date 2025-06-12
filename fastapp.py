@@ -17,7 +17,7 @@ app = FastAPI()
 
 # ✅ تحميل الموديل
 model = GazeNet(backbone='ResNet-34', view='single', pretrained=False)
-gdrive_url = 'https://drive.google.com/file/d/1_6M-7SfWamkk3v_wC-rDR6My198H46pE'  # Replace YOUR_FILE_ID with your file's ID
+gdrive_url = 'https://drive.google.com/uc?id=1_6M-7SfWamkk3v_wC-rDR6My198H46pE'  # Replace YOUR_FILE_ID with your file's ID
 model_path = 'model_best.pth.tar'
 def download_model():
     if not os.path.exists(model_path):
