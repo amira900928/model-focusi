@@ -13,14 +13,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
 from network.gazenet import GazeNet  # موديلك  
 
-resnet_path = "resnet.pth"  # 🛠️ عرفنا المتغير هنا
-
-if not os.path.exists(resnet_path):
-    print("Downloading renet file...")
-    gdown.download(drive_url, resnet_path, quiet=False)
-else:
-    print("resnet already downloaded.")
-
 app = FastAPI()
 
 # ✅ تحميل الموديل
