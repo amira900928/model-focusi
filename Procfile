@@ -1,1 +1,1 @@
-web: uvicorn fastapp:app --host=0.0.0.0 --port=8000
+uvicorn fastapp:app --host=0.0.0.0 --port=8000
