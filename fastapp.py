@@ -6,7 +6,6 @@ from fastapi.responses import JSONResponse
 from PIL import Image
 import torch
 import torchvision.transforms as transforms
-import gdown
 
 # ضيف المسار لو مجلد network مش في نفس المسار
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
@@ -17,16 +16,7 @@ app = FastAPI()
 
 # ✅ تحميل الموديل
 model = GazeNet(backbone='ResNet-34', view='single', pretrained=False)
-gdrive_url = 'https://drive.google.com/uc?id=1_6M-7SfWamkk3v_wC-rDR6My198H46pE'  # Replace YOUR_FILE_ID with your file's ID
 model_path = 'model_best.pth.tar'
-def download_model():
-    if not os.path.exists(model_path):
-        print("Downloading model file...")
-        gdown.download(gdrive_url, model_path, quiet=False)
-    else:
-        print("Model already downloaded.")
-
-download_model()
 state_dict = torch.load(model_path, map_location=torch.device('cpu'), weights_only=False)
 model.load_state_dict(state_dict, strict=False)
 model.eval()
