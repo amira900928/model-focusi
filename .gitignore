@@ -1,0 +1,7 @@
+*.pth
+*.pth.tar
+*.pt
+*.ckpt
+exps/
+multi-view-gaze-master/code/exps/
+multi-view-gaze-master/exps/
