@@ -2,4 +2,4 @@ fastapi
 uvicorn
 torch
 requests
-PIL
+Pillow
