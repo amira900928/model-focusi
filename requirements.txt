@@ -1,7 +1,5 @@
 fastapi
 uvicorn
 torch
-requests
 torchvision
 Pillow
-gdown
